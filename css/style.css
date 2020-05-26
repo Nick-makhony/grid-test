@@ -10,11 +10,13 @@ a {
 }
 body {
   font-family: 'Teko', sans-serif;
+  overflow-x: hidden;
 }
 ul {
   text-decoration: none;
   list-style: none;
 }
+
 /*header-section start*/
 .header {
   position: absolute;
@@ -35,17 +37,25 @@ ul {
   border-radius: 9%;
 }
 .header__navigation {
-  width: 40%;
+  width: 50%;
   color: white;
   font-size: 2em;
 }
 .header__navigation-list {
-  height: 100%;
+  height: 10vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
+li,
+a {
+  transition: 1s;
+}
+li:hover {
+  transform: scale(1.4);
+}
+
 /*header-section end*/
 
 /*hero-section start*/
@@ -81,6 +91,7 @@ ul {
 .hero-img {
   position: absolute;
   height: 100vh;
+  width: 100%;
   z-index: -1;
   top: 0;
 }
@@ -281,7 +292,7 @@ ul {
   grid-row: 4/5;
   grid-column: 5/6;
 }
-.instagram-img9 {
+.instagram-img10 {
   grid-row: 4/5;
   grid-column: 6/7;
 }
@@ -369,7 +380,7 @@ input[type='text'] {
   width: 100%;
   border-radius: 3%;
   line-height: 1.5em;
-  font-family: 'Teko';
+  font-family: 'Teko', sans-serif;
 }
 textarea {
   width: 100%;
@@ -377,11 +388,11 @@ textarea {
   border-radius: 3%;
   line-height: 1.5em;
   resize: none;
-  font-family: 'Teko';
+  font-family: 'Teko', sans-serif;
 }
 input[type='submit'] {
   width: 70px;
-  font-family: 'Teko';
+  font-family: 'Teko', sans-serif;
   font-size: 1em;
   margin-left: 50%;
   transform: translatex(-50%);
@@ -398,4 +409,196 @@ input[type='submit'] {
   font-size: 1.8em;
   background-color: rgb(15, 3, 56);
   color: white;
+}
+
+@media screen and (max-width: 1100px) {
+  .contacts-container textarea {
+    height: 8vh;
+  }
+  .contacts-container address {
+    padding-left: 20px;
+  }
+  .store {
+    padding: 50px 30px;
+    grid-template-columns: 25vw 25vw 25vw;
+  }
+  .store-img-small {
+    width: 25vw;
+    height: 20vw;
+  }
+  .store-img-long {
+    width: 25vw;
+  }
+  .store-img-big {
+    width: 55vw;
+    height: 45vw;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .header__navigation {
+    width: 80%;
+  }
+  .header__navigation ul {
+    width: 100%;
+  }
+  .store p {
+    padding-bottom: 15px;
+  }
+  .instagram {
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: repeat(6, 16.6667%);
+  }
+
+  .instagram-img5 {
+    grid-row: 5/7;
+    grid-column: 1/3;
+  }
+
+  .instagram-img9 {
+    grid-row: 5/6;
+    grid-column: 3/5;
+  }
+  .instagram-img10 {
+    grid-row: 6/7;
+    grid-column: 3/5;
+  }
+
+  .contacts-container {
+    width: 40%;
+  }
+
+  .contacts-container:nth-child(2) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .header {
+    padding: 10px 60px;
+    height: 23vh;
+  }
+  .header__logo {
+    display: none;
+  }
+
+  .header__navigation {
+    width: 100%;
+  }
+  .header__navigation-list {
+    height: 20vh;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #hero {
+    min-width: 500px;
+  }
+  .hero-img {
+    min-width: 500px;
+  }
+  .hero-header {
+    min-width: 500px;
+  }
+  .store-small1,
+  .store-small2,
+  .store-small5 {
+    display: none;
+  }
+  .store {
+    padding: 50px 20px;
+    grid-template-columns: 35vw 35vw;
+    grid-template-rows: 20vw 20vw 30vw;
+    grid-gap: 5vw;
+    grid-template-areas:
+      'big big '
+      'big big '
+      'small3 small4 ';
+  }
+  .store-img-small {
+    width: 35vw;
+    height: 20vw;
+  }
+  .store-img-long {
+    width: 35vw;
+  }
+  .store-img-big {
+    width: 75vw;
+    height: 45vw;
+  }
+  .store-big-turn {
+    font-size: 3em;
+  }
+  .instagram {
+    height: 100vh;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(4, 25%);
+  }
+
+  .instagram-img1 {
+    grid-row: 1/3;
+    grid-column: 1/3;
+  }
+
+  .instagram-img2 {
+    grid-row: 3/4;
+    grid-column: 2/3;
+  }
+
+  .instagram-img3 {
+    grid-row: 4/5;
+    grid-column: 2/3;
+  }
+  .instagram-img4,
+  .instagram-img5,
+  .instagram-img8,
+  .instagram-img9,
+  .instagram-img10 {
+    display: none;
+  }
+
+  .instagram-text {
+    width: 90%;
+  }
+  .instagram-text h2 {
+    font-size: 3em;
+  }
+
+  .instagram-text p {
+    font-size: 2em;
+  }
+  .contacts {
+    flex-direction: column;
+    justify-content: center;
+    font-weight: 400;
+  }
+  .contacts h3 {
+    font-size: 1.2em;
+    font-weight: 400;
+    margin-bottom: 5px;
+  }
+  .contacts-container {
+    width: 90%;
+    height: 85vh;
+    margin: 5px;
+    /* font-weight: 400; */
+  }
+  .contacts-container:first-child {
+    border-radius: 3%;
+  }
+
+  .contacts-container:last-child {
+    border-radius: 3%;
+  }
+  .contacts-container address {
+    font-size: 1em;
+    padding-left: 20px;
+  }
+
+  form {
+    font-size: 1em;
+  }
+
+  input[type='text'] {
+    line-height: 1em;
+  }
 }
